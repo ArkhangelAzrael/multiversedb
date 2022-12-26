@@ -1,0 +1,23 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+<div class="main white container">
+<div class="row">
+
+<div class="col-md-12">
+<h1>Donators</h1>
+<ul>
+{% for donator in donators %}
+<li>
+    <a href="{{ path('user_profile_public', {user_id:donator.id,user_name:donator.username|e('url')}) }}" class="username {{ donator.faction }}">{{ donator.username }}</a>
+    <span class="fa fa-gift donator" title="MultiverseDB Gracious Donator"></span>
+</li>
+{% endfor %}
+</ul>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+{% endblock %}
